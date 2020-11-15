@@ -8,54 +8,132 @@ body {
     margin: 0;
   }
 
+  #pic-part{
+  z-index:10000000 ;
+  width: 25%;
+  height: 15%;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 40%;
+  top:20%;
+}
+#pic-cover{
+  background-color: rgb(255, 255, 255,0.8); 
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  position: relative;
+}
+/*
+#pic-text{
+  font-size: 200%;
+  padding:30% 0 0 20% ;
+}
+*/
+img{
+  width: 200%;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  animation-name: rotate;
+  animation-duration: 45s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: absolute;
+  top:-50%;
+  left:-50%;
+}
 
-  #main{
-    background-color: rgba(0, 0, 0, 0.6);  
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+@keyframes rotate{
+  
+  0%
+{        transform:  rotateZ(0) 
+}      100%
+{        transform:  rotateZ(360deg)
+}  
+}
+
+#black-page{
+z-index:10000 ;
+display: block;
+opacity: 1;
+background-image: url("sonati.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%; 
     height:100%;
+padding: 0;
+margin: 0;
+transition: 2s ;
+}
+
+.position-fixed{
+position: fixed;
+top:0;
+}
+
+#main{
+z-index:0 ;
+background-color: rgba(0, 0, 0, 0.6);  
+display: flex;
+flex-direction: row;
+width: 100%;
+height:100%;
+padding: 0;
+margin: 0;
+
+}
+#part-left{
+flex: 40%;
+background-color: rgba(255, 255, 255, 0.6);  
+margin: 2% 1%;
+border-radius: 2%;
+}
+
+#part-right{
+flex: 40%;
+background-color: rgba(255, 255, 255, 0.6);  
+margin: 2% 1%;
+border-radius: 2%;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+  #pic-part{
+    z-index:10000000 ;
+    width: 30vh;
+    height: 30vh;
     padding: 0;
     margin: 0;
+    border-radius: 50%;
+    position: absolute;
+    left: 40%;
+    top:20%;
   }
-  #part-left{
-    flex: 38%;
-    background-color: rgba(255, 255, 255, 0.6);  
-    margin: 2% 1%;
-    border-radius: 2%;
-  }
-
-  #part-right{
-    flex: 38%;
-    background-color: rgba(255, 255, 255, 0.6);  
-    margin: 2% 1%;
-    border-radius: 2%;
-  }
-  #part-pic{
-    flex: 24%;
-    background-color: rgba(255, 255, 255, 0.6);  
-    margin: 2% 1%;
-    border-radius: 2%;
-  }
-  #rel-part{
+  #pic-cover{
+    background-color: rgb(255, 255, 255,0.8); 
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
     position: relative;
   }
-
   img{
-    width: 90%;
-    position: absolute;
-    left: 5%;
+    width: 200%;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
     animation-name: rotate;
     animation-duration: 45s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    position: absolute;
+    top:-50%;
+    left:-50%;
   }
-  @keyframes rotate{
-  
-      0%
-{        transform:  rotateZ(0) 
-}      100%
-{        transform:  rotateZ(360deg)
-}  
-  }
+
+}
