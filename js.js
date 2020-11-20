@@ -1,11 +1,9 @@
-function removeBlackPage(){
-    let blackpage = document.querySelector('#black-page');
+function removeTempBack(){
+    let temporaryBackground = document.querySelector('#temporary-background');
     
-    blackpage.style.opacity = '0';
-
-    
-    
+     temporaryBackground.style.opacity = '0';
+    temporaryBackground.style['z-index'] = '-1000';
 }
 
-document.querySelector('#pic-part').onclick = removeBlackPage;
+document.querySelector('#pic-part').onclick = removeTempBack;
 

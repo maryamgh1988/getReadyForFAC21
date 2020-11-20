@@ -7,45 +7,65 @@ body {
     padding: 0;
     margin: 0;
   }
+  #temporary-background{
+    z-index:10000 ;
+    display: block;
+    opacity: 1;
+    background-image: url("sonati.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%; 
+        height:100%;
+    padding: 0;
+    margin: 0;
+    transition: 1s ;
+    transition-timing-function: ease-out;
+    }
+    
+    .position-fixedAtTop{
+    position: fixed;
+    top:0;
+    }
 
   #pic-part{
-  z-index:10000000 ;
-  width: 25%;
-  height: 15%;
-  padding: 0;
-  margin: 0;
-  border-radius: 50%;
-  position: absolute;
-  left: 40%;
-  top:20%;
-}
-#pic-cover{
-  background-color: rgb(255, 255, 255,0.8); 
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  position: relative;
-}
-/*
-#pic-text{
-  font-size: 200%;
-  padding:30% 0 0 20% ;
-}
-*/
-img{
-  width: 200%;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  animation-name: rotate;
-  animation-duration: 45s;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  position: absolute;
-  top:-50%;
-  left:-50%;
-}
+    z-index:10000000 ;
+    width: 30vh;
+    height: 30vh;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    position: fixed;
+    top: 10%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #pic-cover{
+    background-color: rgb(255, 255, 255,0.8); 
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+  }
+  #pic-cover::after{
+    content:"";
+    background-image:  url(tap.png);
+    background-size: cover;
+    width: 130%;
+    height: 130%;
+    position: absolute;
+    top:-15%;
+    right:-15%;
+    animation-name: rotate;
+    animation-duration: 45s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+  }
+
+
+
 
 @keyframes rotate{
   
@@ -56,24 +76,7 @@ img{
 }  
 }
 
-#black-page{
-z-index:10000 ;
-display: block;
-opacity: 1;
-background-image: url("sonati.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%; 
-    height:100%;
-padding: 0;
-margin: 0;
-transition: 2s ;
-}
 
-.position-fixed{
-position: fixed;
-top:0;
-}
 
 #main{
 z-index:0 ;
@@ -86,7 +89,7 @@ padding: 0;
 margin: 0;
 
 }
-#part-left{
+/* #part-left{
 flex: 40%;
 background-color: rgba(255, 255, 255, 0.6);  
 margin: 2% 1%;
@@ -98,42 +101,6 @@ flex: 40%;
 background-color: rgba(255, 255, 255, 0.6);  
 margin: 2% 1%;
 border-radius: 2%;
-}
+} */
 
 
-@media only screen and (min-width: 600px) {
-
-  #pic-part{
-    z-index:10000000 ;
-    width: 30vh;
-    height: 30vh;
-    padding: 0;
-    margin: 0;
-    border-radius: 50%;
-    position: absolute;
-    left: 40%;
-    top:20%;
-  }
-  #pic-cover{
-    background-color: rgb(255, 255, 255,0.8); 
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-    position: relative;
-  }
-  img{
-    width: 200%;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    animation-name: rotate;
-    animation-duration: 45s;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    position: absolute;
-    top:-50%;
-    left:-50%;
-  }
-
-}
