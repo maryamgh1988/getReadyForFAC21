@@ -1,9 +1,9 @@
-function removeTempBack(){
-    let temporaryBackground = document.querySelector('#temporary-background');
+function hideBackground(){
+    let shadowBackground = document.querySelector('#shadow-background');
     
-     temporaryBackground.style.opacity = '0';
-    temporaryBackground.style['z-index'] = '-1000';
+    shadowBackground.style.opacity = '1';
+    shadowBackground.style['z-index'] = '0';
 }
 
-document.querySelector('#pic-part').onclick = removeTempBack;
+document.querySelector('#pic-part').onclick = hideBackground;
 
