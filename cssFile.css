@@ -6,26 +6,22 @@ body {
     height:100vh;
     padding: 0;
     margin: 0;
+    font-family: 'Crimson Text', serif;
   }
-  #temporary-background{
-    z-index:10000 ;
-    display: block;
-    opacity: 1;
-    background-image: url("sonati.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%; 
-        height:100%;
-    padding: 0;
-    margin: 0;
-    transition: 1s ;
-    transition-timing-function: ease-out;
-    }
     
-    .position-fixedAtTop{
-    position: fixed;
-    top:0;
-    }
+    #shadow-background{
+      z-index:-10;
+      opacity:0;
+      background-color: rgba(255, 253, 253, 0.96);  
+      width: 100%;
+      height:100%;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top:0;
+      transition: 1s ;
+    transition-timing-function: ease-out;
+      }
 
   #pic-part{
     z-index:10000000 ;
@@ -36,7 +32,7 @@ body {
     border-radius: 50%;
     position: fixed;
     top: 10%;
-    left: 40%;
+    left: 42%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,16 +52,13 @@ body {
     position: absolute;
     top:-15%;
     right:-15%;
-    animation-name: rotate;
+    /* animation-name: rotate;
     animation-duration: 45s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: linear; */
 
   }
-
-
-
 
 @keyframes rotate{
   
@@ -77,30 +70,137 @@ body {
 }
 
 
+#messages-circle{
+  z-index:10000000 ;
+    position: fixed;
+    top: 20%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-#main{
-z-index:0 ;
-background-color: rgba(0, 0, 0, 0.6);  
+
+
+.page-dimention{
+  width:100vw;
+  height:100vh;
 display: flex;
 flex-direction: row;
-width: 100%;
-height:100%;
-padding: 0;
-margin: 0;
+justify-content: space-between;
+align-items: center;
 
 }
-/* #part-left{
-flex: 40%;
-background-color: rgba(255, 255, 255, 0.6);  
-margin: 2% 1%;
-border-radius: 2%;
+
+
+.left-right{
+width:37%;
+height:90vh;
+margin: 1%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
 }
 
-#part-right{
-flex: 40%;
-background-color: rgba(255, 255, 255, 0.6);  
-margin: 2% 1%;
-border-radius: 2%;
-} */
+#page1{
+  display: none;
+}
+
+#page1 #left-part h1, #page1 #left-part #text{
+  width: 80%;
+  background-color: rgba(114, 138, 165, 0.9);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  position: relative;
+  left:9%;
+}
+#page1 #left-part h1{
+  height: 10%;
+}
+#page1 #left-part #text{
+  height: 80%;
+}
+
+#page1 #right-part span{
+width: 30%;
+height: 30%;
+border-radius: 5%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 8% 1%;
+font-family: 'Crimson Text', serif;
+font-size:1.4rem;
+/* font-style: italic; */
+/* border: 2px solid;
+border-image-source: linear-gradient(rgb(35, 76, 189),rgb(77, 157, 231),rgb(35, 76, 189),rgb(77, 157, 231), rgb(35, 76, 189)) ;
+border-image-slice: 5%; */
+
+background: linear-gradient(-45deg, #c4dfee9f, #a1dff8ee, #68c3e4ab, #6894e6);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+#page1 #right-part span:nth-child(1){
+  position: relative;
+  left:5%;
+  top:5%;
+}
+#page1 #right-part span:nth-child(2){
+  position: relative;
+  left:70%;
+  top:-15%;
+}
+#page1 #right-part span:nth-child(3){
+  position: relative;
+  left:-10%;
+  top:0;
+}
+#page1 #right-part span:nth-child(4){
+  position: relative;
+  left:38%;
+  top:-32%;
+}
+#page1 #right-part span:nth-child(5){
+  position: relative;
+  left:65%;
+  top:-25%;
+}
+#page1 #right-part span:nth-child(6){
+  position: relative;
+  left:25%;
+  top:-30%;
+}
+#page1 #right-part span:nth-child(7){
+  position: relative;
+  left:15%;
+  top:-20%;
+}
+#page1 #right-part span:nth-child(8){
+  position: relative;
+  left:60%;
+  top:-30%;
+}
+
+
+
+
 
 
