@@ -10,21 +10,38 @@ body {
   }
     
 
-  #full-page{
-    width: 99vw;
-    height:98vh;
-    background-color: #ffffff;
+ 
+  #layer1{
+    width: 99%;
+    height:98%;
+    background-color: #1eccc3;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    
+  }
+  #layer2{
+    width: 99%;
+    height:98%;
+    background-color: #eed460;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  #layer3{
+    width: 99%;
+    height:98%;
+    background-color: #458fd4;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
   }
 
+
   nav{
-    width: 5%;
-    height: 95%;
+    width: 4%;
+    height: 90%;
     background-color: #e41515;
-    margin-left: 2%;
+    margin:3% 0 0.5% 0.5%;
   }
   nav span{
     width: 10px;
@@ -34,9 +51,9 @@ body {
   }
 
  .colorful-background{
-  width: 90%;
-  height: 95%;
-  margin-right: 2%;
+  width: 92%;
+  height: 90%;
+  margin:3% 0.5% 0.5% 0;
   background-color: red;
   display: flex;
   justify-content: center;
