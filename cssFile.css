@@ -1,15 +1,75 @@
 body {
-    background-image: url("sonati.jpg");
-    background-repeat: no-repeat;
-    background-size: cover; 
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
     height:100vh;
     padding: 0;
     margin: 0;
     font-family: 'Crimson Text', serif;
+    background-color: #9ecaed;
   }
     
-    #shadow-background{
+
+  #full-page{
+    width: 99vw;
+    height:98vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  nav{
+    width: 5%;
+    height: 95%;
+    background-color: #e41515;
+    margin-left: 2%;
+  }
+  nav span{
+    width: 10px;
+    height:10px;
+    border-radius: 50%;
+    background-color: #9ecaed;
+  }
+
+ .colorful-background{
+  width: 90%;
+  height: 95%;
+  margin-right: 2%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ 
+
+ #arrows-include{
+  width: 96%;
+  height: 95%;
+  background-color: rgb(72, 197, 60);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+ #arrows-box{
+  width: 5%;
+  height: 95%;
+  margin-right: 2%;
+  background-color: rgb(255, 255, 255);
+ }
+
+ main{
+  width: 90%;
+  height: 95%;
+  margin-left: 2%;
+  background-color: rgb(255, 255, 255);
+ }
+
+
+  
+    /* #shadow-background{
       z-index:-10;
       opacity:0;
       background-color: rgba(255, 253, 253, 0.96);  
@@ -21,7 +81,7 @@ body {
       top:0;
       transition: 1s ;
     transition-timing-function: ease-out;
-      }
+      } */
 
   #pic-part{
     z-index:10000000 ;
