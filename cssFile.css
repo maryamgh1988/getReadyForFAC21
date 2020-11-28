@@ -9,12 +9,87 @@ body {
     background-color: #9ecaed;
   }
     
+/* #temporary-background{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('sonati.jpg');
+  background-size: cover;
+  opacity:1;
+  z-index:1 ;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top:0;
+  transition: 3s ;
+transition-timing-function: ease-out;
+} */
+
+
+
+#pic-part{
+  z-index:10000000 ;
+  width: 25vh;
+  height: 25vh;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  position: fixed;
+  top: 5%;
+  left: 42%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#pic-cover{
+  background-color: rgb(255, 255, 255,0.8); 
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+}
+#pic-cover::after{
+  content:"";
+  background-image:  url(tap.png);
+  background-size: cover;
+  width: 130%;
+  height: 130%;
+  position: absolute;
+  top:-15%;
+  right:-15%;
+  /* animation-name: rotate;
+  animation-duration: 45s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; */
+
+}
+
+@keyframes rotate{
+
+0%
+{        transform:  rotateZ(0) 
+}      100%
+{        transform:  rotateZ(360deg)
+}  
+}
+
+
+#messages-circle{
+z-index:10000000 ;
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
  
   #layer1{
     width: 99%;
     height:98%;
     background-color: #1eccc3;
+    box-shadow: 0 0 5px #1eccc3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,14 +98,17 @@ body {
     width: 99%;
     height:98%;
     background-color: #eed460;
+    box-shadow: 0 0 5px #eed460;
     display: flex;
     justify-content:center;
     align-items: center;
+    
   }
   #layer3{
     width: 99%;
     height:98%;
     background-color: #458fd4;
+    box-shadow: 0 0 5px #458fd4;
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -39,9 +117,9 @@ body {
 
   nav{
     width: 4%;
-    height: 90%;
+    height: 98%;
     background-color: #e41515;
-    margin:3% 0 0.5% 0.5%;
+    margin:0 0 0 0.5%;
   }
   nav span{
     width: 10px;
@@ -51,9 +129,9 @@ body {
   }
 
  .colorful-background{
-  width: 92%;
-  height: 90%;
-  margin:3% 0.5% 0.5% 0;
+  width: 94%;
+  height: 98%;
+  margin:0 0.5% 0 0;
   background-color: red;
   display: flex;
   justify-content: center;
@@ -75,104 +153,41 @@ body {
   height: 95%;
   margin-right: 2%;
   background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
  }
 
- main{
+ #arrows-box span{
+   width: 50%;
+   height: 10%;
+   margin: 3%;
+   background-color: rgb(27, 125, 211);
+ }
+
+ .text-part{
   width: 90%;
   height: 95%;
   margin-left: 2%;
   background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
  }
 
-
-  
-    /* #shadow-background{
-      z-index:-10;
-      opacity:0;
-      background-color: rgba(255, 253, 253, 0.96);  
-      width: 100%;
-      height:100%;
-      padding: 0;
-      margin: 0;
-      position: fixed;
-      top:0;
-      transition: 1s ;
-    transition-timing-function: ease-out;
-      } */
-
-  #pic-part{
-    z-index:10000000 ;
-    width: 30vh;
-    height: 30vh;
-    padding: 0;
-    margin: 0;
-    border-radius: 50%;
-    position: fixed;
-    top: 10%;
-    left: 42%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #pic-cover{
-    background-color: rgb(255, 255, 255,0.8); 
-    width: 70%;
-    height: 70%;
-    border-radius: 50%;
-  }
-  #pic-cover::after{
-    content:"";
-    background-image:  url(tap.png);
-    background-size: cover;
-    width: 130%;
-    height: 130%;
-    position: absolute;
-    top:-15%;
-    right:-15%;
-    /* animation-name: rotate;
-    animation-duration: 45s;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; */
-
-  }
-
-@keyframes rotate{
-  
-  0%
-{        transform:  rotateZ(0) 
-}      100%
-{        transform:  rotateZ(360deg)
-}  
+.text-part > div{
+  width: 99%;
+  height: 99%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-
-
-#messages-circle{
-  z-index:10000000 ;
-    position: fixed;
-    top: 20%;
-    left: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.page-dimention{
-  width:100vw;
-  height:100vh;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-
-}
-
 
 .left-right{
 width:37%;
-height:90vh;
+height:99%;
 margin: 1%;
 display: flex;
 flex-direction: column;
@@ -181,35 +196,34 @@ align-items: flex-start;
 }
 
 #page1{
+  background-color: rgb(143, 211, 238);
+}
+#page2{
   display: none;
+  background-color: rgb(143, 238, 238);
+}
+#page3{
+  display: none;
+  background-color: rgb(184, 224, 146);
 }
 
-#page1 #left-part h1, #page1 #left-part #text{
+#text{
   width: 80%;
+  height: 80%;
   background-color: rgba(114, 138, 165, 0.9);
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 1%;
   position: relative;
   left:9%;
 }
-#page1 #left-part h1{
-  height: 10%;
-}
-#page1 #left-part #text{
-  height: 80%;
-}
 
 #page1 #right-part span{
-width: 30%;
-height: 30%;
+width: 20%;
+height: 20%;
 border-radius: 5%;
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 8% 1%;
+padding: 5% 1%;
 font-family: 'Crimson Text', serif;
 font-size:1.4rem;
 /* font-style: italic; */
@@ -238,12 +252,12 @@ animation: gradient 15s ease infinite;
 #page1 #right-part span:nth-child(1){
   position: relative;
   left:5%;
-  top:5%;
+  top:0;
 }
 #page1 #right-part span:nth-child(2){
   position: relative;
   left:70%;
-  top:-15%;
+  top:0;
 }
 #page1 #right-part span:nth-child(3){
   position: relative;
