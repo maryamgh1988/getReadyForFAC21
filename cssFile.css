@@ -164,6 +164,7 @@ z-index:10000000 ;
    height: 10%;
    margin: 3%;
    background-color: rgb(27, 125, 211);
+   
  }
 
  .text-part{
@@ -174,39 +175,59 @@ z-index:10000000 ;
   display: flex;
   justify-content: center;
   align-items: center;
+ 
  }
 
-.text-part > div{
+
+ @keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+#page1{
   width: 99%;
   height: 99%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.left-right{
-width:37%;
-height:99%;
-margin: 1%;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-}
-
-#page1{
   background-color: rgb(143, 211, 238);
+  animation-name: fade;
+  animation-duration: 1.5s;
+
 }
 #page2{
+  width: 99%;
+  height: 99%;
   display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgb(143, 238, 238);
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 #page3{
+  width: 99%;
+  height: 99%;
   display: none;
-  background-color: rgb(184, 224, 146);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(189, 238, 143);
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
+
+.left-right{
+  width:37%;
+  height:99%;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  }
 #text{
   width: 80%;
   height: 80%;
