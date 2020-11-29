@@ -173,6 +173,7 @@ z-index:10000000 ;
   margin-left: 2%;
   background-color: rgb(255, 255, 255);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
  
@@ -180,42 +181,45 @@ z-index:10000000 ;
 
 
  @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {top:-300px;opacity:0} 
+  to {top:0;opacity:1}
 }
 #page1{
   width: 99%;
   height: 99%;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(143, 211, 238);
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
 
 }
 #page2{
   width: 99%;
   height: 99%;
   display: none;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(143, 238, 238);
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
 }
 #page3{
   width: 99%;
   height: 99%;
   display: none;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(189, 238, 143);
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 0.5s;
 }
 
 
