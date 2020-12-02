@@ -14,7 +14,7 @@ document.querySelector('#pic-part').onclick = hideBackground;
 /*next*/
 var currentpageindex=0;
 function nextpage(){
-    let pages=document.querySelectorAll('.text-part > div' );
+    let pages=document.querySelectorAll('.pages');
   let myArr= Array.from(pages);
   for(let i=0;i<myArr.length;i++){
       myArr[i].style.display = 'none';
@@ -31,7 +31,7 @@ document.querySelector('#next').onclick = nextpage;
 
 /*previous*/
 function prevpage(){
-    let pages=document.querySelectorAll('.text-part > div' );
+    let pages=document.querySelectorAll('.pages' );
   let myArr= Array.from(pages);
   for(let i=0;i<myArr.length;i++){
       myArr[i].style.display = 'none';
