@@ -48,8 +48,24 @@ document.querySelector('#prev').onclick = prevpage;
 
 
 
+/*.......................slidepages........................................................................*/
+
+function mycarsoul(){
+    let spans=document.querySelectorAll('#left-part > span');
+    let images=document.querySelectorAll('.images');
+    let myArr2= Array.from(spans);
+    let myArr3= Array.from(images);
+    // console.log(myArr2);
+    // console.log(myArr3);
+    for(let i=0;i<myArr2.length;i++){
+        myArr2[i].style.display = 'none';
+        console.log(myArr3[i]);
+        myArr3[i].style.display = 'none';
+    }
+}
 
 
+setTimeout(mycarsoul,2000)
 
 
 
