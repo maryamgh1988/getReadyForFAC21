@@ -2,7 +2,9 @@ body {
   height:100vh;
   padding: 0;
   margin: 0;
-  font-family: 'Crimson Text', serif;
+  background: rgb(1,75,99);
+  background: linear-gradient(339deg, rgba(1,75,99,1) 12%, rgba(10,149,177,1) 30%, rgba(166,230,242,1) 54%, rgba(1,75,99,1) 97%);
+font-family: 'Crimson Text', serif;
   }
 
 
@@ -113,7 +115,7 @@ z-index:10000000 ;
 }
 
 
-#arrow-layer{
+#vertical-arrow-layer{
   width: 8%;
   height: 90%;
   margin:0 2% 0 0;
@@ -123,15 +125,15 @@ z-index:10000000 ;
 }
 
 .box-in-box-mid{
-  width: 95%;
-    height:95%;
+  width: 98%;
+    height:96%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .box-in-box{
-  width: 85%;
-    height:98%;
+  width: 86%;
+    height:97%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,16 +142,20 @@ z-index:10000000 ;
   
 
 .layers-parent{
-  background-color: rgb(0,69,138);
+  background-color: #386FA4;
+  box-shadow: black 0 0 5px;
 }
 .layers-parent>div{
-  background-color: #4a8bee;
+  background-color: #59A5D8;
+  box-shadow: black 0 0 5px;
 }
 .layers-parent>div>div{
-  background-color: #7eacf1;
+  background-color: #91E5F6;
+  box-shadow: black 0 0 5px;
 }
 .layers-parent>div>div>div{
-  background-color: #d4f1f7;
+  background-color: #ddf4f8;
+  box-shadow: black 0 0 5px;
 }
  
 
@@ -165,6 +171,28 @@ z-index:10000000 ;
 
 
 
+ #horizental-arrow{
+    z-index:10000000 ;
+    width: 35vh;
+    height: 35vh;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    position: fixed;
+    top: 60%;
+    left: 42%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ #prev1, #next1{
+  width: 70%;
+  height: 30%;
+   background-image: url(arrow.png);
+   background-repeat: no-repeat;
+   background-size: contain;
+   transform: rotate(90deg);
+ }
 
 
  @keyframes fade {
@@ -180,7 +208,7 @@ z-index:10000000 ;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(143, 211, 238);
+
   animation-name: fade;
   animation-duration: 0.5s;
 
