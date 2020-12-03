@@ -49,27 +49,27 @@ document.querySelector('#prev').onclick = prevpage;
 
 
 /*.......................slideimages........................................................................*/
-let currentindex = 0;
-function mycarsoul(){
-    currentindex++;
+let currentInnerIndex = 0;
+function imageCarousel(){
+    currentInnerIndex++;
     let spans=document.querySelectorAll('#left-part > span');
     let images=document.querySelectorAll('.images');
-    let myArr2= Array.from(spans);
-    let myArr3= Array.from(images);
-    for(let i=0;i<myArr2.length;i++){
-        myArr2[i].style.display = 'none';
-        myArr3[i].style.display = 'none';
+    let spanArr= Array.from(spans);
+    let imageArr= Array.from(images);
+    for(let i=0;i<spanArr.length;i++){
+        spanArr[i].style.opacity = '0';
+        imageArr[i].style.display = 'none';
     }
-  if(currentindex > myArr2.length){
-    currentindex=1;
+  if(currentInnerIndex > spanArr.length){
+    currentInnerIndex=1;
   }
-    myArr2[currentindex-1].style.display='block';
-    myArr3[currentindex-1].style.display='block';
+  spanArr[currentInnerIndex-1].style.opacity='1';
+  imageArr[currentInnerIndex-1].style.display='block';
     
    
-    setTimeout(mycarsoul,2000);
+    setTimeout(imageCarousel,5000);
 }
-setTimeout(mycarsoul,2000);
+setTimeout(imageCarousel,2000);
 
 
 
