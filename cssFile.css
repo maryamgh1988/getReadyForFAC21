@@ -173,19 +173,20 @@ z-index:10000000 ;
 
  #horizental-arrow{
     z-index:10000000 ;
+    opacity: 0;;
     width: 35vh;
     height: 35vh;
     padding: 0;
     margin: 0;
     border-radius: 50%;
     position: fixed;
-    top: 60%;
+    top: 65%;
     left: 42%;
     display: flex;
     justify-content: center;
     align-items: center;
  }
- #prev1, #next1{
+ #prev-horiz, #next-horiz{
   width: 70%;
   height: 30%;
    background-image: url(arrow.png);
@@ -248,18 +249,12 @@ z-index:10000000 ;
   justify-content: space-between;
   align-items: flex-start;
   }
-#text{
-  width: 80%;
-  height: 80%;
-  background-color: rgba(114, 138, 165, 0.9);
-  padding: 1%;
-  position: relative;
-  left:9%;
-}
+
 
 #page1 #left-part span{
 width: 20%;
 height: 20%;
+opacity: 0;
 background-color: beige;
 border-radius: 5%;
 display: flex;
@@ -270,7 +265,9 @@ font-family: 'Crimson Text', serif;
 font-size:1.4rem;
 
 }
-
+.images{
+  display: none;
+}
 
 
 #page1 #left-part span:nth-child(1){
