@@ -61,6 +61,7 @@ let spans;
 let images;
 let spanArr;
 let imageArr
+let currentInnerIndex = 0;
 function imageCarousel(){
   spans=document.querySelectorAll('#left-part > span');
   images=document.querySelectorAll('.images');
@@ -76,21 +77,21 @@ function imageCarousel(){
 if(currentInnerIndex > spanArr.length){
   currentInnerIndex=1;
 }
-if(currentInnerIndex<0){
-  currentInnerIndex = spanArr.length+2;
-}
-console.log(currentInnerIndex);
+if(currentInnerIndex<1){
+  currentInnerIndex = spanArr.length;
 }
 
+}
 
 
-let currentInnerIndex = 0;
+
+
 function imageNext(){
     currentInnerIndex++;
     imageCarousel();
   spanArr[currentInnerIndex-1].style.opacity='1';
   imageArr[currentInnerIndex-1].style.display='block';   
-  TimeoutId = setTimeout(imageNext,2000);
+  TimeoutId = setTimeout(imageNext,4000);
 }
  setTimeout(imageNext,3000);
 
