@@ -4,7 +4,12 @@ function hideBackground(){
     let shadowBackground = document.querySelector('#temporary-background');
     
     shadowBackground.style.opacity = '0';
-    shadowBackground.style['z-index'] = '-1';
+    if(shadowBackground.style.opacity == '0'){
+
+setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000)
+      
+    }
+   
 }
 
 document.querySelector('#pic-part').onclick = hideBackground;
