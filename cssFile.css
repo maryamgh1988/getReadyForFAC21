@@ -9,7 +9,7 @@ font-family: 'Crimson Text', serif;
 
 
     
-/* #temporary-background{
+#temporary-background{
   width: 100vw;
   height: 100vh;
   background-image: url('sonati.jpg');
@@ -22,7 +22,7 @@ font-family: 'Crimson Text', serif;
   top:0;
   transition: 3s ;
 transition-timing-function: ease-out;
-} */
+}
 
 
 
@@ -104,6 +104,26 @@ z-index:10000000 ;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#social{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+#social a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 0 50% 0;
+}
+
+#social a img{
+  width: 50%;
 }
 
 #main-content{
