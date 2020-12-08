@@ -1,4 +1,21 @@
 
+let currentmessIndex = 0;
+let welcometimeId;
+function welcomeMessage(){
+  currentmessIndex++;
+  let welcomes = document.querySelectorAll('#welcome-message span');
+  let welcomArr = Array.from(welcomes);
+  for(let i=0;i<welcomArr.length; i++){
+    welcomArr[i].style.opacity = 0;
+  }
+  welcomArr[currentmessIndex - 1].style.opacity = 1;
+  welcometimeId = setTimeout(welcomeMessage,2000);
+  if(currentmessIndex ==welcomArr.length){
+    clearTimeout(welcometimeId);
+  }
+}
+setTimeout(welcomeMessage,1000);
+
 /*.......................remove temporary background.........................................................*/
 function hideBackground(){
     let shadowBackground = document.querySelector('#temporary-background');

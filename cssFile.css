@@ -20,14 +20,26 @@ font-family: 'Crimson Text', serif;
   margin: 0;
   position: fixed;
   top:0;
-  transition: 3s ;
-transition-timing-function: ease-out;
 }
 
+#welcome-message{
+  z-index:100000 ;
+    position: fixed;
+    top: 18%;
+    left: 51%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  #welcome-message span{
+    position: fixed;
+    opacity: 0;
+    transition: ease-in-out 1s;
+  }
 
 #pic-part{
-  z-index:10000000 ;
+  z-index:1000 ;
   width: 25vh;
   height: 25vh;
   padding: 0;
@@ -73,15 +85,7 @@ transition-timing-function: ease-out;
 }
 
 
-#messages-circle{
-z-index:10000000 ;
-  position: fixed;
-  top: 20%;
-  left: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 
 #underneath-layer{
