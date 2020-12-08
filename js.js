@@ -9,7 +9,7 @@ function welcomeMessage(){
     welcomArr[i].style.opacity = 0;
   }
   welcomArr[currentmessIndex - 1].style.opacity = 1;
-  welcometimeId = setTimeout(welcomeMessage,2000);
+  welcometimeId = setTimeout(welcomeMessage,1000);
   if(currentmessIndex ==welcomArr.length){
     clearTimeout(welcometimeId);
   }
@@ -19,7 +19,9 @@ setTimeout(welcomeMessage,1000);
 /*.......................remove temporary background.........................................................*/
 function hideBackground(){
     let shadowBackground = document.querySelector('#temporary-background');
-    
+    shadowBackground.style.animation= 'fade2 2s';  /* I have added to js because adding
+     to css trigger fading background after loading and also
+      I need to change opacity to 0 in next line because if not background will come back*/
     shadowBackground.style.opacity = '0';
     if(shadowBackground.style.opacity == '0'){
 

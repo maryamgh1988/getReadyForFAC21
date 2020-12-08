@@ -21,22 +21,10 @@ font-family: 'Crimson Text', serif;
   position: fixed;
   top:0;
 }
-
-#welcome-message{
-  z-index:100000 ;
-    position: fixed;
-    top: 18%;
-    left: 51%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #welcome-message span{
-    position: fixed;
-    opacity: 0;
-    transition: ease-in-out 1s;
-  }
+@keyframes fade2 {
+  from {opacity:1} 
+  to {opacity:0}
+}
 
 #pic-part{
   z-index:1000 ;
@@ -83,6 +71,24 @@ font-family: 'Crimson Text', serif;
 {        transform:  rotateZ(360deg)
 }  
 }
+
+#welcome-message{
+  z-index:100000 ;
+    position: absolute;
+    left:50%;
+    bottom: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #welcome-message span{
+  position: fixed;
+    opacity: 0;
+    transition: ease-in-out 1s;
+    font-size: 1.5rem;
+    color: rgb(2, 61, 100);
+  }
 
 
 
