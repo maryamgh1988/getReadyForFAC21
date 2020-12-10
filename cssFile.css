@@ -45,6 +45,7 @@ font-family: 'Crimson Text', serif;
   width: 70%;
   height: 70%;
   border-radius: 50%;
+  cursor: pointer;
 }
 #pic-cover::after{
   content:"";
@@ -90,6 +91,13 @@ font-family: 'Crimson Text', serif;
     color: rgb(2, 61, 100);
   }
 
+
+
+
+@keyframes fadeClick {
+  from {opacity:1} 
+  to {opacity:0.5}
+}
 
 
 
@@ -244,30 +252,7 @@ font-family: 'Crimson Text', serif;
   animation-duration: 0.5s;
 
 }
-#page2{
-  width: 99%;
-  height: 99%;
-  display: none;
-  position: relative;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(143, 238, 238);
-  animation-name: fade;
-  animation-duration: 0.5s;
-}
-#page3{
-  width: 99%;
-  height: 99%;
-  display: none;
-  position: relative;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(189, 238, 143);
-  animation-name: fade;
-  animation-duration: 0.5s;
-}
+
 
 
 .left-right{
@@ -333,16 +318,62 @@ font-size:1.4rem;
 #page1 #left-part span:nth-child(7){
   position: relative;
   left:15%;
-  top:-20%;
+  top:-80%;
 }
 #page1 #left-part span:nth-child(8){
   position: relative;
   left:60%;
-  top:-30%;
+  top:-100%;
+}
+#page1 #left-part span:nth-child(9){
+  position: relative;
+  left:60%;
+  top:-120%;
+}
+#page1 #left-part span:nth-child(10){
+  position: relative;
+  left:60%;
+  top:-150%;
 }
 
 
 
 
+/******************** PAGE  2 *******************************************************/
+
+#page2 {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 99%;
+  height: 99%;
+  position: relative;
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+
+
+/******************** PAGE  2 *******************************************************/
+
+#page3{
+  width: 99%;
+  height: 99%;
+  display: none;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(189, 238, 143);
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
 
 

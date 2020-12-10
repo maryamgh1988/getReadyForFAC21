@@ -20,7 +20,7 @@ function welcomeMessage(){
 setTimeout(welcomeMessage,1000);
 
 /*.......................remove temporary background.........................................................*/
-
+let hidId;
 function hideBackground(){
     let shadowBackground = document.querySelector('#temporary-background');
     shadowBackground.style.animation= 'fade2 2s';  /* I have added to js because adding
@@ -36,14 +36,16 @@ setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000);
       
     }
     /*   add settimeout here. Oli taught me that when we want to delay something it is better to add it to an eventlistener not if statement which I have done*/
-    setTimeout(imageNext,4000);
+    hidId = setTimeout(imageNext,4000);
+    console.log(hidId + 'hid')
 }
 
 document.querySelector('#pic-part').onclick = hideBackground;
 
 /*.......................slidepages........................................................................*/
-
+let inID;
 /*next*/
+let anotherIDtime;
 var currentpageindex=0;
 function nextpage(){
     let pages=document.querySelectorAll('.pages');
@@ -55,16 +57,24 @@ function nextpage(){
   if(currentpageindex>= myArr.length){
       currentpageindex = 0;
   }
-myArr[currentpageindex].style.display='flex';
+
+
+
+  if(currentpageindex == 1){
+    myArr[currentpageindex].style.display='grid';
+}else{
+  myArr[currentpageindex].style.display='flex';
+}
+
 
 
 if(myArr[0].style.display == 'flex'){
-  setTimeout(imageNext,4000);
-  console.log('man')
-  
+  inID= setTimeout(imageNext,4000);
+  console.log('if stat' + inID)
+  document.querySelector('#horizental-arrow').style.opacity= 1;
   }else{
-    console.log('to')
     clearTimeout(TimeoutIdInnerslide);
+    document.querySelector('#horizental-arrow').style.opacity= 0;
   }
 
 
@@ -129,7 +139,7 @@ function imageNext(){
   spanArr[currentInnerIndex-1].style.opacity='1';
   imageArr[currentInnerIndex-1].style.display='block';   
   TimeoutIdInnerslide = setTimeout(imageNext,4000);
-  console.log(TimeoutIdInnerslide)
+  console.log(TimeoutIdInnerslide + 'next')
 }
  
 
@@ -145,20 +155,21 @@ document.querySelector('#next-horiz').addEventListener('click',shownext )
 
 
 
-
-function  imageCarouselPrev(){
+let prevId;
+function  imagePrev(){
   currentInnerIndex--;
     imageCarousel();
   spanArr[currentInnerIndex-1].style.opacity='1';
   imageArr[currentInnerIndex-1].style.display='block';
   
-  setTimeout(imageNext,4000)
+  prevId = setTimeout(imageNext,4000)
+  console.log(prevId + 'prev');
 }
 
 
 function showPrev(){
   clearTimeout(TimeoutIdInnerslide);
-  imageCarouselPrev();
+  imagePrev();
 
 }
 
