@@ -13,22 +13,30 @@ function welcomeMessage(){
   if(currentmessIndex ==welcomArr.length){
     clearTimeout(welcometimeId);
   }
+  if(document.querySelector('#click-me').style.opacity == 1){
+    setTimeout(() => {document.querySelector('#click-me').style.animation= "fadeClick 1s infinite"}, 500);
+  }
 }
 setTimeout(welcomeMessage,1000);
 
 /*.......................remove temporary background.........................................................*/
+
 function hideBackground(){
     let shadowBackground = document.querySelector('#temporary-background');
     shadowBackground.style.animation= 'fade2 2s';  /* I have added to js because adding
      to css trigger fading background after loading and also
       I need to change opacity to 0 in next line because if not background will come back*/
-    shadowBackground.style.opacity = '0';
-    if(shadowBackground.style.opacity == '0'){
+    shadowBackground.style.opacity = 0;
+    document.querySelector('#welcome-message').style.display = 'none';
 
-setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000)
+    if(shadowBackground.style.opacity == 0){
+      /* I have added this because background doesnt fade gradually . does suddenly*/
+
+setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000);
       
     }
-   
+    /*   add settimeout here. Oli taught me that when we want to delay something it is better to add it to an eventlistener not if statement which I have done*/
+    setTimeout(imageNext,4000);
 }
 
 document.querySelector('#pic-part').onclick = hideBackground;
@@ -48,6 +56,18 @@ function nextpage(){
       currentpageindex = 0;
   }
 myArr[currentpageindex].style.display='flex';
+
+
+if(myArr[0].style.display == 'flex'){
+  setTimeout(imageNext,4000);
+  console.log('man')
+  
+  }else{
+    console.log('to')
+    clearTimeout(TimeoutIdInnerslide);
+  }
+
+
 }
 
 
@@ -65,6 +85,7 @@ function prevpage(){
       currentpageindex = myArr.length-1;
   }
 myArr[currentpageindex].style.display='flex';
+
 }
 
 
@@ -74,13 +95,8 @@ document.querySelector('#prev').onclick = prevpage;
 
 /*.......................slideimages........................................................................*/
 
-//when you press the next or previous buttons your old timeouts do not cancel so now you have switched slides, the old timeout will still trigger and then you've also set a new one so it will trigger as well all way within the range of time that you would like.
 
-// Instead of creating a timeout for each button click i would suggest using intervals and keeping track of it outside any functions.
-
-// When the user presses a forward or back button cancel that interval and create a new one so that you don't run into the issue you are having now where you basically have like 10 loops spamming your carousel at the same time.
-
-let TimeoutId;
+  let TimeoutIdInnerslide;
 let spans;
 let images;
 let spanArr;
@@ -107,22 +123,19 @@ if(currentInnerIndex<1){
 
 }
 
-
-
-
 function imageNext(){
     currentInnerIndex++;
     imageCarousel();
   spanArr[currentInnerIndex-1].style.opacity='1';
   imageArr[currentInnerIndex-1].style.display='block';   
-  TimeoutId = setTimeout(imageNext,4000);
+  TimeoutIdInnerslide = setTimeout(imageNext,4000);
+  console.log(TimeoutIdInnerslide)
 }
- setTimeout(imageNext,3000);
-
+ 
 
 
 function shownext(){
-  clearTimeout(TimeoutId);
+  clearTimeout(TimeoutIdInnerslide);
   imageNext()
 }
 
@@ -130,18 +143,21 @@ function shownext(){
 document.querySelector('#next-horiz').addEventListener('click',shownext )
 
 
+
+
+
 function  imageCarouselPrev(){
   currentInnerIndex--;
     imageCarousel();
   spanArr[currentInnerIndex-1].style.opacity='1';
   imageArr[currentInnerIndex-1].style.display='block';
-  TimeoutId = setTimeout(imageNext,2000);
-    
+  
+  setTimeout(imageNext,4000)
 }
 
 
 function showPrev(){
-  clearTimeout(TimeoutId);
+  clearTimeout(TimeoutIdInnerslide);
   imageCarouselPrev();
 
 }
