@@ -35,8 +35,11 @@ function hideBackground(){
 setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000);
       
     }
+
+/*  calling this function here to hide boxes in page 2  before openning the page*/
+    hideGridItems();
     /*   add settimeout here. Oli taught me that when we want to delay something it is better to add it to an eventlistener not if statement which I have done*/
-    hidId = setTimeout(imageNext,4000);
+    hidId = setTimeout(imageNext,1000);
     console.log(hidId + 'hid')
 }
 
@@ -59,14 +62,11 @@ function nextpage(){
   }
 
 
-
   if(currentpageindex == 1){
     myArr[currentpageindex].style.display='grid';
 }else{
   myArr[currentpageindex].style.display='flex';
 }
-
-
 
 if(myArr[0].style.display == 'flex'){
   inID= setTimeout(imageNext,4000);
@@ -94,7 +94,22 @@ function prevpage(){
   if(currentpageindex< 0){
       currentpageindex = myArr.length-1;
   }
-myArr[currentpageindex].style.display='flex';
+
+
+  if(currentpageindex == 1){
+    myArr[currentpageindex].style.display='grid';
+}else{
+  myArr[currentpageindex].style.display='flex';
+}
+
+if(myArr[0].style.display == 'flex'){
+  inID= setTimeout(imageNext,4000);
+  console.log('if stat' + inID)
+  document.querySelector('#horizental-arrow').style.opacity= 1;
+  }else{
+    clearTimeout(TimeoutIdInnerslide);
+    document.querySelector('#horizental-arrow').style.opacity= 0;
+  }
 
 }
 
@@ -173,4 +188,27 @@ function showPrev(){
 
 }
 
-document.querySelector('#prev-horiz').addEventListener('click',showPrev )
+document.querySelector('#prev-horiz').addEventListener('click',showPrev );
+
+
+/*.......................page2........................................................................*/
+let gridItems ;
+let gridItemsArray;
+let textArray = [];
+let showedIndex = 0;
+function hideGridItems(){
+gridItems = document.querySelectorAll('.grid-item');
+gridItemsArray = Array.from(gridItems);
+gridItemsArray.sort((a,b) => {return b.textContent.length - a.textContent.length})
+gridItemsArray[showedIndex].style.opacity = 1;
+
+  showedIndex++;
+  
+  setTimeout(hideGridItems,4000);
+}
+setTimeout(hideGridItems,4000);
+
+function showItems(){
+
+}
+

@@ -34,8 +34,8 @@ font-family: 'Crimson Text', serif;
   margin: 0;
   border-radius: 50%;
   position: fixed;
-  top: 5%;
-  left: 42%;
+  top: 1%;
+  left: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -349,19 +349,32 @@ font-size:1.4rem;
   position: relative;
   animation-name: fade;
   animation-duration: 0.5s;
+  font-size: 0.8em;
+  grid-gap: 0.3em;
 }
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
+ 
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.3) 49%, rgba(0,15,19,0.1) 100%);
+border-radius: 2em;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.2em;
   text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+ #double-item{
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+#hidden-item{
+  opacity: 0;
 }
 
 
-
-
-/******************** PAGE  2 *******************************************************/
+/******************** PAGE  3 *******************************************************/
 
 #page3{
   width: 99%;
