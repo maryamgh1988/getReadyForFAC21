@@ -36,8 +36,7 @@ setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000);
       
     }
 
-/*  calling this function here to hide boxes in page 2  before openning the page*/
-    hideGridItems();
+
     /*   add settimeout here. Oli taught me that when we want to delay something it is better to add it to an eventlistener not if statement which I have done*/
     hidId = setTimeout(imageNext,1000);
     console.log(hidId + 'hid')
@@ -46,7 +45,7 @@ setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000);
 document.querySelector('#pic-part').onclick = hideBackground;
 
 /*.......................slidepages........................................................................*/
-let inID;
+
 /*next*/
 let anotherIDtime;
 var currentpageindex=0;
@@ -64,13 +63,14 @@ function nextpage(){
 
   if(currentpageindex == 1){
     myArr[currentpageindex].style.display='grid';
+    /* settimeout for showing boxes in page 2  */
+    setTimeout(hideGridItems,500);
 }else{
   myArr[currentpageindex].style.display='flex';
 }
 
 if(myArr[0].style.display == 'flex'){
-  inID= setTimeout(imageNext,4000);
-  console.log('if stat' + inID)
+  setTimeout(imageNext,4000);
   document.querySelector('#horizental-arrow').style.opacity= 1;
   }else{
     clearTimeout(TimeoutIdInnerslide);
@@ -170,15 +170,15 @@ document.querySelector('#next-horiz').addEventListener('click',shownext )
 
 
 
-let prevId;
+
 function  imagePrev(){
   currentInnerIndex--;
     imageCarousel();
   spanArr[currentInnerIndex-1].style.opacity='1';
   imageArr[currentInnerIndex-1].style.display='block';
   
-  prevId = setTimeout(imageNext,4000)
-  console.log(prevId + 'prev');
+  TimeoutIdInnerslide = setTimeout(imageNext,4000)
+  
 }
 
 
@@ -197,16 +197,21 @@ let gridItemsArray;
 let textArray = [];
 let showedIndex = 0;
 function hideGridItems(){
+  
+  
 gridItems = document.querySelectorAll('.grid-item');
 gridItemsArray = Array.from(gridItems);
 gridItemsArray.sort((a,b) => {return b.textContent.length - a.textContent.length})
-gridItemsArray[showedIndex].style.opacity = 1;
 
+gridItemsArray[showedIndex].style.opacity = 1;
+gridItemsArray[showedIndex].style.animation= "show 0.3s "
+if(showedIndex<gridItemsArray.length-1){
+  /*   -1 because of next ++ */
   showedIndex++;
-  
-  setTimeout(hideGridItems,4000);
 }
-setTimeout(hideGridItems,4000);
+setTimeout(hideGridItems,500);
+}
+
 
 function showItems(){
 
