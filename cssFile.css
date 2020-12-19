@@ -8,11 +8,6 @@ font-family: 'Crimson Text', serif;
   }
 
 
-
-
- 
-
-
   
   #temporary-background{
     width: 100vw;
@@ -33,14 +28,14 @@ font-family: 'Crimson Text', serif;
 
   #pic-part{
     z-index:1000 ;
-    width: 25vh;
-    height: 25vh;
+    width: 15vh;
+    height: 15vh;
     padding: 0;
     margin: 0;
     border-radius: 50%;
     position: fixed;
     top: 1%;
-    left: 45%;
+    left: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +87,7 @@ font-family: 'Crimson Text', serif;
     position: fixed;
       opacity: 0;
       transition: ease-in-out 1s;
-      font-size: 1.5rem;
+      font-size: 1rem;
       color: rgb(2, 61, 100);
     }
   
@@ -120,51 +115,19 @@ font-family: 'Crimson Text', serif;
 
 
 
-  #underneath-layer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height:100vh;
-    padding: 0;
-    margin: 0;
-  }
   
   
   #social-layer{
-    width: 90% ;
-    height:8% ;
-    margin:0 0 0 2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
+   
   }
   
-  #social{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  #social a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: 0 0 50% 0;
-  }
-  
-  #social a img{
-    width: 50%;
-  }
+
   
   #main-content{
-    width:75%;
-    height: 90%;
+    width:99%;
+    height: 89%;
+    margin-top: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,24 +135,24 @@ font-family: 'Crimson Text', serif;
   
   
   #vertical-arrow-layer{
-    width: 8%;
-    height: 90%;
-    margin:0 2% 0 0;
+    width: 99% ;
+    height:8% ;
+    margin-bottom: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .box-in-box-mid{
-    width: 98%;
-      height:96%;
+    width: 99%;
+      height:99%;
       display: flex;
       justify-content: center;
       align-items: center;
   }
   .box-in-box{
-    width: 86%;
-      height:97%;
+    width: 99%;
+      height:99%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -215,29 +178,20 @@ font-family: 'Crimson Text', serif;
   }
    
   
-  
-  
-   #prev, #next{
-    width: 70%;
-    height: 30%;
-     background-image: url(arrow.png);
-     background-repeat: no-repeat;
-     background-size: contain;
-   }
+
   
   
   
    #horizental-arrow{
-      z-index:10000000 ;
-      opacity: 0;;
+      opacity: 0;
       width: 35vh;
       height: 35vh;
       padding: 0;
       margin: 0;
       border-radius: 50%;
       position: fixed;
-      top: 65%;
-      left: 42%;
+      top: 73%;
+      left: 28%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -248,10 +202,10 @@ font-family: 'Crimson Text', serif;
      background-image: url(arrow.png);
      background-repeat: no-repeat;
      background-size: contain;
-     transform: rotate(90deg);
+     
    }
-  
-  
+   #next-horiz{transform: rotate(90deg)}
+   #prev-horiz{transform: rotate(90deg) scaleY(-1)}     /* because when I rotate it went down prev one  */
    @keyframes fade {
     from {top:50%;opacity:0} 
     to {top:0;opacity:1}
@@ -262,8 +216,8 @@ font-family: 'Crimson Text', serif;
     height: 99%;
     position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
   
     animation-name: fade;
@@ -274,87 +228,100 @@ font-family: 'Crimson Text', serif;
   
   
   .left-right{
-    width:37%;
-    height:99%;
+    width:98%;
+    height:46%;
     margin: 1%;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     }
   
   
   #page1 #left-part span{
-  width: 20%;
-  height: 20%;
+    position: fixed;
+    top:20%;
+  width: 90%;
+  height: auto;
   opacity: 0;
-  background-color: beige;
-  border-radius: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5% 1%;
   font-family: 'Crimson Text', serif;
-  font-size:1.4rem;
+  font-size:1rem;
   
+  }
+  #img-slide{
+    position: fixed;
+    bottom:20%;
+    width: 90%;
   }
   .images{
     display: none;
+    
   }
   
   
-  #page1 #left-part span:nth-child(1){
+  
+   /******************** PAGE  2 *******************************************************/
+  
+   #page2 {
+    display: none;
+    grid-template-columns: repeat(5,1fr);
+    width: 99%;
+    height: 99%;
     position: relative;
-    left:5%;
-    top:0;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    font-size: 0.8em;
+    grid-gap: 0.3em;
   }
-  #page1 #left-part span:nth-child(2){
-    position: relative;
-    left:70%;
-    top:0;
-  }
-  #page1 #left-part span:nth-child(3){
-    position: relative;
-    left:-10%;
-    top:0;
-  }
-  #page1 #left-part span:nth-child(4){
-    position: relative;
-    left:38%;
-    top:-32%;
-  }
-  #page1 #left-part span:nth-child(5){
-    position: relative;
-    left:65%;
-    top:-25%;
-  }
-  #page1 #left-part span:nth-child(6){
-    position: relative;
-    left:25%;
-    top:-30%;
-  }
-  #page1 #left-part span:nth-child(7){
-    position: relative;
-    left:15%;
-    top:-80%;
-  }
-  #page1 #left-part span:nth-child(8){
-    position: relative;
-    left:60%;
-    top:-100%;
-  }
-  #page1 #left-part span:nth-child(9){
-    position: relative;
-    left:60%;
-    top:-120%;
-  }
-  #page1 #left-part span:nth-child(10){
-    position: relative;
-    left:60%;
-    top:-150%;
+  .grid-item {
+   
+    /* background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.3) 49%, rgba(0,15,19,0.1) 100%);
+  border-radius: 2em; */
+    opacity: 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 0.2em;
+    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
+   #double-item{
+    grid-column-start: 4;
+    grid-column-end: 6;
+  }
+  #hidden-item{
+    box-shadow:transparent;
+  }
+  @keyframes show{
+    from{opacity:0};
+    to{opacity:1}
+  }
   
+    /******************** PAGE  3 *******************************************************/
+  
+    #page3{
+      width: 99%;
+      height: 99%;
+      display: none;
+      position: relative;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      animation-name: fade;
+      animation-duration: 0.5s;
+    }
+    #page3 form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
   
   
   
@@ -363,12 +330,23 @@ font-family: 'Crimson Text', serif;
 
 
 /******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
+/******************** *******************************************************/
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
   
   
   #underneath-layer{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -604,6 +582,26 @@ font-family: 'Crimson Text', serif;
   
   
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /******************** PAGE  2 *******************************************************/
   
   #page2 {
@@ -662,5 +660,6 @@ font-family: 'Crimson Text', serif;
     align-content: center;
   }
 
-}
+
 /******************** *******************************************************/
+}
