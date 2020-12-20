@@ -142,6 +142,23 @@ font-family: 'Crimson Text', serif;
     justify-content: center;
     align-items: center;
   }
+  #vertical-arrow-layer>div>div>div{
+    display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  #prev, #next{
+    width: 7%;
+    height: 90%;
+     background-image: url(arrow.png);
+     background-repeat: no-repeat;
+     background-size: contain;
+   }
+   #next{
+     transform: scaleY(-1);
+   }
   
   .box-in-box-mid{
     width: 99%;
@@ -154,15 +171,16 @@ font-family: 'Crimson Text', serif;
     width: 99%;
       height:99%;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
   }
+  
     
   
   .layers-parent{
     background-color: #386FA4;
-    box-shadow: black 0 0 5px;
+    box-shadow: black 0 0 3px;
   }
   .layers-parent>div{
     background-color: #59A5D8;
@@ -210,6 +228,10 @@ font-family: 'Crimson Text', serif;
     from {top:50%;opacity:0} 
     to {top:0;opacity:1}
   }
+
+
+
+
   
   #page1{
     width: 99%;
@@ -310,17 +332,15 @@ font-family: 'Crimson Text', serif;
       height: 99%;
       display: none;
       position: relative;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: space-around;
       align-items: center;
       animation-name: fade;
       animation-duration: 0.5s;
     }
     #page3 form{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-content: center;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
     }
   
   
@@ -401,10 +421,23 @@ font-family: 'Crimson Text', serif;
     height: 90%;
     margin:0 2% 0 0;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
   }
+  #vertical-arrow-layer>div>div>div{
+    display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+  }
   
+  #prev, #next{
+    width: 100%;
+     background-image: url(arrow.png);
+     background-repeat: no-repeat;
+     background-size: contain;
+   }
   .box-in-box-mid{
     width: 98%;
       height:96%;
@@ -442,13 +475,7 @@ font-family: 'Crimson Text', serif;
   
   
   
-   #prev, #next{
-    width: 70%;
-    height: 30%;
-     background-image: url(arrow.png);
-     background-repeat: no-repeat;
-     background-size: contain;
-   }
+   
   
   
   
@@ -473,8 +500,14 @@ font-family: 'Crimson Text', serif;
      background-image: url(arrow.png);
      background-repeat: no-repeat;
      background-size: contain;
-     transform: rotate(90deg);
+     
    }
+   #next-horiz{transform: rotate(90deg)}
+   #prev-horiz{transform: rotate(90deg) scaleY(-1)}     /* because when I rotate it went down prev one  */
+   @keyframes fade {
+    from {top:50%;opacity:0} 
+    to {top:0;opacity:1}
+  }
   
   
    @keyframes fade {
@@ -523,9 +556,15 @@ font-family: 'Crimson Text', serif;
   font-size:1.4rem;
   
   }
+  #img-slide{
+    position: relative;
+   
+  }
   .images{
     display: none;
+    
   }
+  
   
   
   #page1 #left-part span:nth-child(1){
@@ -647,19 +686,99 @@ font-family: 'Crimson Text', serif;
     height: 99%;
     display: none;
     position: relative;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     animation-name: fade;
     animation-duration: 0.5s;
   }
-  #page3 form{
+  #contact{
+    width: 99%;
+    height: 20%;
+    margin-top: 10%;
+    background: rgb(232,251,254);
+    background: linear-gradient(339deg, rgba(232,251,254,1) 0%, rgba(221,244,248,1) 28%, rgba(234,249,251,1) 48%, rgba(229,244,246,1) 66%, rgba(221,244,248,1) 100%);
+display: flex;
+justify-content: flex-start;
+align-items: center;
+  }
+  #icons{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+justify-content: space-around;
+align-items: center;
   }
 
+  #contact ul li {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+  }
+
+
+#contact ul li img{
+  list-style-type: none;
+  width: 10%;
+  height: 10%;
+  
+  /* position: relative; */
+}
+
+/* .gmail{
+  content: url(https://simpleicons.org/icons/gmail.svg);
+  width: 3%;
+  position: absolute;
+  right: 10%;
+  top: -10%;
+}
+.freecodecamp::before{
+content: url(https://simpleicons.org/icons/freecodecamp.svg);
+width: 3%;
+  position: absolute;
+  right: 10%;
+  top: -10%;
+}
+
+.codewars::before{
+  content: url(https://simpleicons.org/icons/codewars.svg);
+  width: 3%;
+  position: absolute;
+  right: 10%;
+  top: -10%;
+}
+
+.github::before{
+  content: url(https://simpleicons.org/icons/github.svg);
+  width: 3%;
+  position: absolute;
+  right: 10%;
+  top: -10%;
+} */
+  #page3 form{
+    width: 99%;
+    height: 55%;
+    display: grid;
+   
+    grid-template-columns: 1fr 3fr;
+  }
+
+input{
+    height:40%;
+   
+    }
+label{
+  height:40%;
+    padding: 0.5em 0.5em 0.5em 0;
+  
+}
+input[name='comment']{
+  height:80%;
+  }
+
+
+input[value='Send']{
+  grid-column: 2 / 3;
+}
 
 /******************** *******************************************************/
 }
