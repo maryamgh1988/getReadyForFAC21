@@ -23,7 +23,7 @@ setTimeout(welcomeMessage,1000);
 let hidId;
 function hideBackground(){
     let shadowBackground = document.querySelector('#temporary-background');
-    shadowBackground.style.animation= 'fade2 2s';  /* I have added to js because adding
+    shadowBackground.style.animation= 'fade2 1s';  /* I have added to js because adding
      to css trigger fading background after loading and also
       I need to change opacity to 0 in next line because if not background will come back*/
     shadowBackground.style.opacity = 0;
@@ -32,7 +32,7 @@ function hideBackground(){
     if(shadowBackground.style.opacity == 0){
       /* I have added this because background doesnt fade gradually . does suddenly*/
 
-setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000);
+setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 1000);
       
     }
 
@@ -45,38 +45,68 @@ setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 2000);
 document.querySelector('#pic-part').onclick = hideBackground;
 
 /*.......................slidepages........................................................................*/
-
-/*next*/
-let anotherIDtime;
-var currentpageindex=0;
-function nextpage(){
-    let pages=document.querySelectorAll('.pages');
-  let myArr= Array.from(pages);
+let pages;
+let myArr;
+function partOfFunction(event){
+  pages=document.querySelectorAll('.pages' );
+  myArr= Array.from(pages);
   for(let i=0;i<myArr.length;i++){
       myArr[i].style.display = 'none';
   }
-  currentpageindex++;
-  if(currentpageindex>= myArr.length){
-      currentpageindex = 0;
+
+
+
+
+
+  if(event.target.className == "contact-span"){
+    partOfFunction();
+    document.querySelector('#page3').style.display= 'flex';
+  } else if(event.target.className == 'fac'){
+    partOfFunction();
+    document.querySelector('#page2').style.display= 'grid';
+    if(!startId){
+      startId = setTimeout(showGridItems,500);   
+     }
+  } else if(event.target.className == 'life-journey'){
+    partOfFunction();
+    document.querySelector('#page1').style.display= 'flex';
   }
 
 
-  if(currentpageindex == 1){
-    myArr[currentpageindex].style.display='grid';
-    /* settimeout for showing boxes in page 2  */
-    setTimeout(hideGridItems,500);
-}else{
-  myArr[currentpageindex].style.display='flex';
-}
+
+
+
+
 
 if(myArr[0].style.display == 'flex'){
-  setTimeout(imageNext,4000);
+ setTimeout(imageNext,4000);
+ 
   document.querySelector('#horizental-arrow').style.opacity= 1;
   }else{
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#horizental-arrow').style.opacity= 0;
   }
+}
+/*next*/
 
+var currentpageindex=0;
+let startId;
+function nextpage(){
+  partOfFunction()
+
+  currentpageindex++;
+  if(currentpageindex>= myArr.length){
+      currentpageindex = 0;
+  }
+  if(currentpageindex == 1){
+    myArr[currentpageindex].style.display='grid';
+    /* settimeout for showing boxes in page 2  */
+    if(!startId){
+      startId = setTimeout(showGridItems,500);   
+     }
+}else{
+  myArr[currentpageindex].style.display='flex';
+}
 
 }
 
@@ -85,38 +115,52 @@ document.querySelector('#next').onclick = nextpage;
 
 /*previous*/
 function prevpage(){
-    let pages=document.querySelectorAll('.pages' );
-  let myArr= Array.from(pages);
-  for(let i=0;i<myArr.length;i++){
-      myArr[i].style.display = 'none';
-  }
+  
+  partOfFunction();
+
   currentpageindex--;
   if(currentpageindex< 0){
       currentpageindex = myArr.length-1;
   }
-
-
   if(currentpageindex == 1){
     myArr[currentpageindex].style.display='grid';
+
+    /* I wanted to make it start from beginning but I have given up. I dont have enough time. and if I click prev and next button timeout jump together .I will fix later. now it is fine */
+if(!startId){
+  startId = setTimeout(showGridItems,500);
+}
 }else{
   myArr[currentpageindex].style.display='flex';
 }
-
-if(myArr[0].style.display == 'flex'){
-  inID= setTimeout(imageNext,4000);
-  console.log('if stat' + inID)
-  document.querySelector('#horizental-arrow').style.opacity= 1;
-  }else{
-    clearTimeout(TimeoutIdInnerslide);
-    document.querySelector('#horizental-arrow').style.opacity= 0;
-  }
 
 }
 
 
 document.querySelector('#prev').onclick = prevpage;
 
+/* ????????????????????????????????????????????????????????   */
+// function jumpTopage(event){
+// if(event.target.className == "contact-span"){
+//   partOfFunction();
+//   document.querySelector('#page3').style.display= 'flex';
+// } else if(event.target.className == 'fac'){
+//   partOfFunction();
+//   document.querySelector('#page2').style.display= 'grid';
+//   if(!startId){
+//     startId = setTimeout(showGridItems,500);   
+//    }
+// } else if(event.target.className == 'life-journey'){
+//   partOfFunction();
+//   document.querySelector('#page1').style.display= 'flex';
+// }
+// }
 
+document.querySelector('.contact-span').onclick = jumpTopage;
+document.querySelector('.life-journey').onclick = jumpTopage;
+document.querySelector('.fac').onclick = jumpTopage;
+
+
+/* ????????????????????????????????????????????????????????   */
 
 /*.......................slideimages........................................................................*/
 
@@ -154,7 +198,6 @@ function imageNext(){
   spanArr[currentInnerIndex-1].style.opacity='1';
   imageArr[currentInnerIndex-1].style.display='block';   
   TimeoutIdInnerslide = setTimeout(imageNext,4000);
-  console.log(TimeoutIdInnerslide + 'next')
 }
  
 
@@ -196,7 +239,7 @@ let gridItems ;
 let gridItemsArray;
 let textArray = [];
 let showedIndex = 0;
-function hideGridItems(){
+function showGridItems(){
   
   
 gridItems = document.querySelectorAll('.grid-item');
@@ -209,7 +252,7 @@ if(showedIndex<gridItemsArray.length-1){
   /*   -1 because of next ++ */
   showedIndex++;
 }
-setTimeout(hideGridItems,500);
+setTimeout(showGridItems,500);
 }
 
 
