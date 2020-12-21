@@ -59,17 +59,18 @@ function partOfFunction(event){
 
 
   if(event.target.className == "contact-span"){
-    partOfFunction();
+    clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page3').style.display= 'flex';
   } else if(event.target.className == 'fac'){
-    partOfFunction();
+    clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page2').style.display= 'grid';
     if(!startId){
       startId = setTimeout(showGridItems,500);   
      }
   } else if(event.target.className == 'life-journey'){
-    partOfFunction();
+    clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page1').style.display= 'flex';
+    setTimeout(imageNext,4000);
   }
 
 
@@ -79,8 +80,6 @@ function partOfFunction(event){
 
 
 if(myArr[0].style.display == 'flex'){
- setTimeout(imageNext,4000);
- 
   document.querySelector('#horizental-arrow').style.opacity= 1;
   }else{
     clearTimeout(TimeoutIdInnerslide);
@@ -155,9 +154,9 @@ document.querySelector('#prev').onclick = prevpage;
 // }
 // }
 
-document.querySelector('.contact-span').onclick = jumpTopage;
-document.querySelector('.life-journey').onclick = jumpTopage;
-document.querySelector('.fac').onclick = jumpTopage;
+document.querySelector('.contact-span').onclick = partOfFunction;
+document.querySelector('.life-journey').onclick = partOfFunction;
+document.querySelector('.fac').onclick = partOfFunction;
 
 
 /* ????????????????????????????????????????????????????????   */
