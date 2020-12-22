@@ -71,11 +71,36 @@ function partOfFunction(event){
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page1').style.display= 'flex';
     setTimeout(imageNext,4000);
+  }else if(event.target.className == 'nextone'){
+    currentpageindex++;
+      if(currentpageindex>= myArr.length){
+          currentpageindex = 0;
+      }
+      if(currentpageindex == 1){
+        myArr[currentpageindex].style.display='grid';
+        /* settimeout for showing boxes in page 2  */
+        if(!startId){
+          startId = setTimeout(showGridItems,500);   
+         }
+    }else{
+      myArr[currentpageindex].style.display='flex';
+    }
+  }else if(event.target.className == 'previous'){
+    currentpageindex--;
+    if(currentpageindex< 0){
+        currentpageindex = myArr.length-1;
+    }
+    if(currentpageindex == 1){
+      myArr[currentpageindex].style.display='grid';
+  
+      /* I wanted to make it start from beginning but I have given up. I dont have enough time. and if I click prev and next button timeout jump together .I will fix later. now it is fine */
+  if(!startId){
+    startId = setTimeout(showGridItems,500);
   }
-
-
-
-
+  }else{
+    myArr[currentpageindex].style.display='flex';
+  }
+  }
 
 
 
@@ -90,52 +115,52 @@ if(myArr[0].style.display == 'flex'){
 
 var currentpageindex=0;
 let startId;
-function nextpage(){
-  partOfFunction()
+// function nextpage(){
+//   partOfFunction()
 
-  currentpageindex++;
-  if(currentpageindex>= myArr.length){
-      currentpageindex = 0;
-  }
-  if(currentpageindex == 1){
-    myArr[currentpageindex].style.display='grid';
-    /* settimeout for showing boxes in page 2  */
-    if(!startId){
-      startId = setTimeout(showGridItems,500);   
-     }
-}else{
-  myArr[currentpageindex].style.display='flex';
-}
+//   currentpageindex++;
+//   if(currentpageindex>= myArr.length){
+//       currentpageindex = 0;
+//   }
+//   if(currentpageindex == 1){
+//     myArr[currentpageindex].style.display='grid';
+//     /* settimeout for showing boxes in page 2  */
+//     if(!startId){
+//       startId = setTimeout(showGridItems,500);   
+//      }
+// }else{
+//   myArr[currentpageindex].style.display='flex';
+// }
 
-}
+// }
 
 
-document.querySelector('#next').onclick = nextpage;
+document.querySelector('#next').onclick = partOfFunction;
 
 /*previous*/
-function prevpage(){
+// function prevpage(){
   
-  partOfFunction();
+//   partOfFunction();
 
-  currentpageindex--;
-  if(currentpageindex< 0){
-      currentpageindex = myArr.length-1;
-  }
-  if(currentpageindex == 1){
-    myArr[currentpageindex].style.display='grid';
+//   currentpageindex--;
+//   if(currentpageindex< 0){
+//       currentpageindex = myArr.length-1;
+//   }
+//   if(currentpageindex == 1){
+//     myArr[currentpageindex].style.display='grid';
 
-    /* I wanted to make it start from beginning but I have given up. I dont have enough time. and if I click prev and next button timeout jump together .I will fix later. now it is fine */
-if(!startId){
-  startId = setTimeout(showGridItems,500);
-}
-}else{
-  myArr[currentpageindex].style.display='flex';
-}
+//     /* I wanted to make it start from beginning but I have given up. I dont have enough time. and if I click prev and next button timeout jump together .I will fix later. now it is fine */
+// if(!startId){
+//   startId = setTimeout(showGridItems,500);
+// }
+// }else{
+//   myArr[currentpageindex].style.display='flex';
+// }
 
-}
+// }
 
 
-document.querySelector('#prev').onclick = prevpage;
+document.querySelector('#prev').onclick = partOfFunction;
 
 /* ????????????????????????????????????????????????????????   */
 // function jumpTopage(event){
