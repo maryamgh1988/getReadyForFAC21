@@ -117,7 +117,7 @@ font-family: 'Crimson Text', serif;
 
   
   
-  #social-layer{
+  #first-layer{
     display: none;
    
   }
@@ -159,6 +159,19 @@ font-family: 'Crimson Text', serif;
    #next{
      transform: scaleY(-1);
    }
+
+   #last-inner{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #last-inner span{
+  width: 30%;
+  text-align: center;
+  }
   
   .box-in-box-mid{
     width: 99%;
@@ -202,21 +215,21 @@ font-family: 'Crimson Text', serif;
   
    #horizental-arrow{
       opacity: 0;
-      width: 35vh;
-      height: 35vh;
+      width: 30vh;
+      height: 10vh;
       padding: 0;
       margin: 0;
       border-radius: 50%;
       position: fixed;
-      top: 73%;
-      left: 28%;
+      bottom:5%;
+      left: 25%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
    }
    #prev-horiz, #next-horiz{
-    width: 70%;
-    height: 30%;
+    width: 200%;
+    height: 120%;
      background-image: url(arrow.png);
      background-repeat: no-repeat;
      background-size: contain;
@@ -291,14 +304,17 @@ font-family: 'Crimson Text', serif;
   
    #page2 {
     display: none;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,1fr);
     width: 99%;
-    height: 99%;
+    height: 90%;
     position: relative;
+    margin-top: 20%;
     animation-name: fade;
     animation-duration: 0.5s;
     font-size: 0.8em;
     grid-gap: 0.3em;
+    overflow: scroll;
   }
   .grid-item {
    
@@ -314,8 +330,8 @@ font-family: 'Crimson Text', serif;
   }
   
    #double-item{
-    grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
   #hidden-item{
     box-shadow:transparent;
@@ -327,6 +343,10 @@ font-family: 'Crimson Text', serif;
   
     /******************** PAGE  3 *******************************************************/
   
+
+
+
+
     #page3{
       width: 99%;
       height: 99%;
@@ -338,10 +358,111 @@ font-family: 'Crimson Text', serif;
       animation-name: fade;
       animation-duration: 0.5s;
     }
-    #page3 form{
-      display: grid;
-      grid-template-columns: 1fr 3fr;
+    #contact{
+      width: 99%;
+      height: 30%;
+      margin-top: 20%;
+      background: rgb(232,251,254);
+      background: linear-gradient(339deg, rgba(232,251,254,1) 0%, rgba(221,244,248,1) 28%, rgba(234,249,251,1) 48%, rgba(229,244,246,1) 66%, rgba(221,244,248,1) 100%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.1rem;
+  font-family: 'Times New Roman', Times, serif;
     }
+    #icons{
+      display: flex;
+      flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 3%;
+  margin:5% 0 0 5%;
+  padding: 0;
+    }
+    #info{
+      display: flex;
+      flex-direction: column;
+  justify-content: space-between;
+  margin: 0 0 0 2%;
+  padding: 0;
+  
+    }
+  
+  
+    #contact ul li {
+      list-style-type: none;
+      margin:0;
+      padding: 0;
+    }
+  
+  
+  #contact ul li img{
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    
+    /* position: relative; */
+  }
+  
+  /* .gmail{
+    content: url(https://simpleicons.org/icons/gmail.svg);
+    width: 3%;
+    position: absolute;
+    right: 10%;
+    top: -10%;
+  }
+  .freecodecamp::before{
+  content: url(https://simpleicons.org/icons/freecodecamp.svg);
+  width: 3%;
+    position: absolute;
+    right: 10%;
+    top: -10%;
+  }
+  
+  .codewars::before{
+    content: url(https://simpleicons.org/icons/codewars.svg);
+    width: 3%;
+    position: absolute;
+    right: 10%;
+    top: -10%;
+  }
+  
+  .github::before{
+    content: url(https://simpleicons.org/icons/github.svg);
+    width: 3%;
+    position: absolute;
+    right: 10%;
+    top: -10%;
+  } */
+    #page3 form{
+      width: 99%;
+      height: 55%;
+      display: grid;
+      justify-content: space-around;
+      grid-template-columns: 1fr 3fr;
+   
+    }
+  
+  input{
+      height:40%;
+     
+      }
+  label{
+    height:40%;
+      padding: 0.5em 0.5em 0.5em 0;
+    
+  }
+  input[name='comment']{
+    height:80%;
+    overflow: scroll;
+    }
+  
+  
+  input[value='Send']{
+    grid-column: 2 / 3;
+    padding-bottom: 0.5rem;
+  }
+  
   
   
   
@@ -378,7 +499,7 @@ font-family: 'Crimson Text', serif;
   }
   
   
-  #social-layer{
+  #first-layer{
     width: 8%;
     height: 90%;
     margin:0 0 0 2%;
@@ -387,25 +508,21 @@ font-family: 'Crimson Text', serif;
     align-items: center;
   }
   
-  #social{
+  #first-inner{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
   }
-  #social a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: 0 0 50% 0;
+
+  #first-inner span{
+  width: 30vh;
+  text-align: center;
+    transform: rotate(-90deg);
   }
-  
-  #social a img{
-    width: 50%;
-  }
+
   
   #main-content{
     width:75%;
@@ -438,6 +555,11 @@ font-family: 'Crimson Text', serif;
      background-repeat: no-repeat;
      background-size: contain;
    }
+
+
+   #last-inner{
+    display: none;
+  }
   .box-in-box-mid{
     width: 98%;
       height:96%;
@@ -645,15 +767,18 @@ font-family: 'Crimson Text', serif;
   
   #page2 {
     display: none;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
     width: 99%;
-    height: 99%;
+    height: 95%;
     position: relative;
+    margin-top: 5%;
     animation-name: fade;
     animation-duration: 0.5s;
     font-size: 0.8em;
     grid-gap: 0.3em;
+    overflow: hidden;
   }
+ 
   .grid-item {
    
     /* background: rgb(255,255,255);
@@ -668,8 +793,8 @@ font-family: 'Crimson Text', serif;
   }
   
    #double-item{
-    grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
   #hidden-item{
     box-shadow:transparent;
@@ -678,107 +803,11 @@ font-family: 'Crimson Text', serif;
     from{opacity:0};
     to{opacity:1}
   }
-  
-  /******************** PAGE  3 *******************************************************/
-  
-  #page3{
-    width: 99%;
-    height: 99%;
-    display: none;
-    position: relative;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    animation-name: fade;
-    animation-duration: 0.5s;
-  }
+
   #contact{
-    width: 99%;
-    height: 20%;
     margin-top: 10%;
-    background: rgb(232,251,254);
-    background: linear-gradient(339deg, rgba(232,251,254,1) 0%, rgba(221,244,248,1) 28%, rgba(234,249,251,1) 48%, rgba(229,244,246,1) 66%, rgba(221,244,248,1) 100%);
-display: flex;
-justify-content: flex-start;
-align-items: center;
-  }
-  #icons{
-    display: flex;
-    flex-direction: column;
-justify-content: space-around;
-align-items: center;
-  }
-
-  #contact ul li {
-    list-style-type: none;
-    margin:0;
-    padding: 0;
   }
 
 
-#contact ul li img{
-  list-style-type: none;
-  width: 10%;
-  height: 10%;
-  
-  /* position: relative; */
-}
 
-/* .gmail{
-  content: url(https://simpleicons.org/icons/gmail.svg);
-  width: 3%;
-  position: absolute;
-  right: 10%;
-  top: -10%;
-}
-.freecodecamp::before{
-content: url(https://simpleicons.org/icons/freecodecamp.svg);
-width: 3%;
-  position: absolute;
-  right: 10%;
-  top: -10%;
-}
-
-.codewars::before{
-  content: url(https://simpleicons.org/icons/codewars.svg);
-  width: 3%;
-  position: absolute;
-  right: 10%;
-  top: -10%;
-}
-
-.github::before{
-  content: url(https://simpleicons.org/icons/github.svg);
-  width: 3%;
-  position: absolute;
-  right: 10%;
-  top: -10%;
-} */
-  #page3 form{
-    width: 99%;
-    height: 55%;
-    display: grid;
-   
-    grid-template-columns: 1fr 3fr;
-  }
-
-input{
-    height:40%;
-   
-    }
-label{
-  height:40%;
-    padding: 0.5em 0.5em 0.5em 0;
-  
-}
-input[name='comment']{
-  height:80%;
-  }
-
-
-input[value='Send']{
-  grid-column: 2 / 3;
-}
-
-/******************** *******************************************************/
 }
