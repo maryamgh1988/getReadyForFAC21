@@ -56,26 +56,34 @@ function partOfFunction(event){
 
 
 
+/*  I had to change the class nmae because with the same class for desctop size and mobile size JS doesnt work   */ 
 
-
-  if(event.target.className == "contact-span"){
+  if(event.target.className == "contact-span" || event.target.className == "contact-span2"){
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page3').style.display= 'flex';
-  } else if(event.target.className == 'fac'){
+  } else if(event.target.className == 'fac' || event.target.className == 'fac2'){
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page2').style.display= 'grid';
     if(!startId){
       startId = setTimeout(showGridItems,500);   
      }
-  } else if(event.target.className == 'life-journey'){
+  } else if(event.target.className == 'life-journey' || event.target.className == 'life-journey2'){
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page1').style.display= 'flex';
     setTimeout(imageNext,4000);
+
   }else if(event.target.className == 'nextone'){
+    
     currentpageindex++;
       if(currentpageindex>= myArr.length){
           currentpageindex = 0;
       }
+      if(currentpageindex == 0){
+        
+        TimeoutIdInnerslide = setTimeout(imageNext,4000);
+        
+      }
+
       if(currentpageindex == 1){
         myArr[currentpageindex].style.display='grid';
         /* settimeout for showing boxes in page 2  */
@@ -89,6 +97,11 @@ function partOfFunction(event){
     currentpageindex--;
     if(currentpageindex< 0){
         currentpageindex = myArr.length-1;
+    }
+    if(currentpageindex == 0){
+        clearTimeout(TimeoutIdInnerslide);
+      TimeoutIdInnerslide = setTimeout(imageNext,4000);
+      
     }
     if(currentpageindex == 1){
       myArr[currentpageindex].style.display='grid';
@@ -182,6 +195,13 @@ document.querySelector('#prev').onclick = partOfFunction;
 document.querySelector('.contact-span').onclick = partOfFunction;
 document.querySelector('.life-journey').onclick = partOfFunction;
 document.querySelector('.fac').onclick = partOfFunction;
+
+document.querySelector('.contact-span2').addEventListener('click', partOfFunction );
+document.querySelector('.life-journey2').addEventListener('click', partOfFunction );
+document.querySelector('.fac2').addEventListener('click', partOfFunction);
+
+
+
 
 
 /* ????????????????????????????????????????????????????????   */
