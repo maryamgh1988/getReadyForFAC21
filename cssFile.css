@@ -127,7 +127,6 @@ font-family: 'Crimson Text', serif;
   #main-content{
     width:99%;
     height: 89%;
-    margin-top: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,11 +220,12 @@ font-family: 'Crimson Text', serif;
       margin: 0;
       border-radius: 50%;
       position: fixed;
-      bottom:5%;
+      bottom:17%;
       left: 25%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transform: scaleY(-1)
    }
    #prev-horiz, #next-horiz{
     width: 200%;
@@ -314,7 +314,6 @@ font-family: 'Crimson Text', serif;
     animation-duration: 0.5s;
     font-size: 0.8em;
     grid-gap: 0.3em;
-    overflow: scroll;
   }
   .grid-item {
    
