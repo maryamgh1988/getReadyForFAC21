@@ -20,7 +20,6 @@ function welcomeMessage(){
 setTimeout(welcomeMessage,1000);
 
 /*.......................remove temporary background.........................................................*/
-let hidId;
 function hideBackground(){
     let shadowBackground = document.querySelector('#temporary-background');
     shadowBackground.style.animation= 'fade2 1s';  /* I have added to js because adding
@@ -28,6 +27,7 @@ function hideBackground(){
       I need to change opacity to 0 in next line because if not background will come back*/
     shadowBackground.style.opacity = 0;
     document.querySelector('#welcome-message').style.display = 'none';
+    document.querySelector('#my-name').style.display = 'block';
 
     if(shadowBackground.style.opacity == 0){
       /* I have added this because background doesnt fade gradually . does suddenly*/
@@ -38,8 +38,8 @@ setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 1000);
 
 
     /*   add settimeout here. Oli taught me that when we want to delay something it is better to add it to an eventlistener not if statement which I have done*/
-    hidId = setTimeout(imageNext,1000);
-    console.log(hidId + 'hid')
+   setTimeout(imageNext,1000);
+
 }
 
 document.querySelector('#pic-part').onclick = hideBackground;
@@ -70,7 +70,7 @@ function partOfFunction(event){
   } else if(event.target.className == 'life-journey' || event.target.className == 'life-journey2'){
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page1').style.display= 'flex';
-    setTimeout(imageNext,4000);
+    setTimeout(imageNext,6000);
 
   }else if(event.target.className == 'nextone'){
     
@@ -80,7 +80,7 @@ function partOfFunction(event){
       }
       if(currentpageindex == 0){
         
-        TimeoutIdInnerslide = setTimeout(imageNext,4000);
+        TimeoutIdInnerslide = setTimeout(imageNext,6000);
         
       }
 
@@ -241,7 +241,7 @@ function imageNext(){
     imageCarousel();
   paraArr[currentInnerIndex-1].style.display='block';
   imageArr[currentInnerIndex-1].style.display='block';   
-  TimeoutIdInnerslide = setTimeout(imageNext,4000);
+  TimeoutIdInnerslide = setTimeout(imageNext,6000);
 }
  
 
@@ -264,7 +264,7 @@ function  imagePrev(){
   paraArr[currentInnerIndex-1].style.display='block';
   imageArr[currentInnerIndex-1].style.display='block';
   
-  TimeoutIdInnerslide = setTimeout(imageNext,4000)
+  TimeoutIdInnerslide = setTimeout(imageNext,6000)
   
 }
 
