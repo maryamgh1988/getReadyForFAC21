@@ -210,28 +210,28 @@ document.querySelector('.fac2').addEventListener('click', partOfFunction);
 
 
   let TimeoutIdInnerslide;
-let spans;
+let paras;
 let images;
 let spanArr;
 let imageArr
 let currentInnerIndex = 0;
 function imageCarousel(){
-  spans=document.querySelectorAll('#left-part > span');
+  paras=document.querySelectorAll('#left-part > p');
   images=document.querySelectorAll('.images');
-  spanArr= Array.from(spans);
+  paraArr= Array.from(paras);
   imageArr= Array.from(images);
   if(currentInnerIndex==1){
     document.querySelector('#horizental-arrow').style.opacity= 1;
   }
-  for(let i=0;i<spanArr.length;i++){
-      spanArr[i].style.opacity = '0';
+  for(let i=0;i<paraArr.length;i++){
+      paraArr[i].style.display = 'none';
       imageArr[i].style.display = 'none';
   }
-if(currentInnerIndex > spanArr.length){
+if(currentInnerIndex > paraArr.length){
   currentInnerIndex=1;
 }
 if(currentInnerIndex<1){
-  currentInnerIndex = spanArr.length;
+  currentInnerIndex = paraArr.length;
 }
 
 }
@@ -239,7 +239,7 @@ if(currentInnerIndex<1){
 function imageNext(){
     currentInnerIndex++;
     imageCarousel();
-  spanArr[currentInnerIndex-1].style.opacity='1';
+  paraArr[currentInnerIndex-1].style.display='block';
   imageArr[currentInnerIndex-1].style.display='block';   
   TimeoutIdInnerslide = setTimeout(imageNext,4000);
 }
@@ -261,7 +261,7 @@ document.querySelector('#next-horiz').addEventListener('click',shownext )
 function  imagePrev(){
   currentInnerIndex--;
     imageCarousel();
-  spanArr[currentInnerIndex-1].style.opacity='1';
+  paraArr[currentInnerIndex-1].style.display='block';
   imageArr[currentInnerIndex-1].style.display='block';
   
   TimeoutIdInnerslide = setTimeout(imageNext,4000)
