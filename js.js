@@ -30,14 +30,15 @@ function hideBackground(){
     document.querySelector('#my-name').style.display = 'block';
 
     if(shadowBackground.style.opacity == 0){
-      /* I have added this because background doesnt fade gradually . does suddenly*/
+      /* I have added this because background doesnt fade gradually . does suddenly ..... instead of making display none*/
 
 setTimeout(()=> {shadowBackground.style['z-index'] = '-1';} , 1000);
+//if I dont make z index -1 the background will stay on top
       
     }
 
 
-    /*   add settimeout here. Oli taught me that when we want to delay something it is better to add it to an eventlistener not if statement which I have done*/
+    /*   add settimeout here. Oli taught me that when we want to delay something it is better to add it to an eventlistener not if statement which I had done*/
    setTimeout(imageNext,1000);
 
 }
@@ -47,6 +48,8 @@ document.querySelector('#pic-part').onclick = hideBackground;
 /*.......................slidepages........................................................................*/
 let pages;
 let myArr;
+let startId;
+let currentpageindex=0;
 function partOfFunction(event){
   pages=document.querySelectorAll('.pages' );
   myArr= Array.from(pages);
@@ -61,15 +64,19 @@ function partOfFunction(event){
   if(event.target.className == "contact-span" || event.target.className == "contact-span2"){
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page3').style.display= 'flex';
+    currentpageindex = 2
   } else if(event.target.className == 'fac' || event.target.className == 'fac2'){
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page2').style.display= 'grid';
+    currentpageindex = 1
     if(!startId){
       startId = setTimeout(showGridItems,500);   
      }
   } else if(event.target.className == 'life-journey' || event.target.className == 'life-journey2'){
+  
     clearTimeout(TimeoutIdInnerslide);
     document.querySelector('#page1').style.display= 'flex';
+    currentpageindex = 0
     setTimeout(imageNext,6000);
 
   }else if(event.target.className == 'nextone'){
@@ -79,7 +86,7 @@ function partOfFunction(event){
           currentpageindex = 0;
       }
       if(currentpageindex == 0){
-        
+        clearTimeout(TimeoutIdInnerslide);
         TimeoutIdInnerslide = setTimeout(imageNext,6000);
         
       }
@@ -126,8 +133,8 @@ if(myArr[0].style.display == 'flex'){
 }
 /*next*/
 
-var currentpageindex=0;
-let startId;
+// var currentpageindex=0;
+// let startId;
 // function nextpage(){
 //   partOfFunction()
 
