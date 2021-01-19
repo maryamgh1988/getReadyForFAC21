@@ -538,6 +538,11 @@ font-family: 'Crimson Text', serif;
   width: 30vh;
   text-align: center;
     transform: rotate(-90deg);
+    cursor: pointer;
+  }
+
+  #first-inner span:hover{
+text-shadow: 0.05em  0.05em  0.05em rgba(15, 122, 194, 0.384) ;
   }
 
   
